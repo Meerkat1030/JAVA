@@ -1,4 +1,4 @@
-package chap12.generics;
+package sec03.chap12.generics;
 
 public class GenericPrinterTest {
     public static void main(String[] args) {
@@ -7,14 +7,14 @@ public class GenericPrinterTest {
         powderPrinter.setMaterial(new Powder());
         Powder powder = powderPrinter.getMaterial(); //형변환 하지 않음
         //System.out.println(powderPrinter);
-        powderPrinter.printing();
+//        powderPrinter.printing();
 
 
         GenericPrinter<Plastic> plasticPrinter = new GenericPrinter<Plastic>();
         plasticPrinter.setMaterial(new Plastic());
         Plastic plastic =  plasticPrinter.getMaterial(); //형변환 하지 않음
         //System.out.println(plasticPrinter);
-        plasticPrinter.printing();
+        //plasticPrinter.printing();
 
 
 

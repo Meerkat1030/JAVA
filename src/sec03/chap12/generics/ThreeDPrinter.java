@@ -1,4 +1,4 @@
-package chap12.generics;
+package sec03.chap12.generics;
 
 public class ThreeDPrinter {
 	//재료가 파우더인 경우

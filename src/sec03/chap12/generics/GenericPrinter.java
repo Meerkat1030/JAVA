@@ -1,4 +1,4 @@
-package chap12.generics;
+package sec03.chap12.generics;
 
 public class GenericPrinter<T extends Material> {
     private T material;
@@ -12,11 +12,11 @@ public class GenericPrinter<T extends Material> {
         this.material = material;
     }
 
-    public String toString(){
-        return material.toString();
-    }
-
-    public void printing(){
-        material.doPrinting();
-    }
+//    public String toString(){
+//        return material.toString();
+//    }
+//
+//    public void printing(){
+//        material.doPrinting();
+//    }
 }
