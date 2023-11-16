@@ -63,4 +63,8 @@ Comparable 인터페이스를 구현하지 않아서
 TreeSet의 요소로 추가할 때 어떤 기준으로 노드를 비교해서
 트리를 형성해야 하는지 모름.
 
-Comparable, Comparator
+Comparable
+compareTo >> this 전달된 매개변수
+
+Comparator
+compare >> 전잘되는 두개의 매개변수
