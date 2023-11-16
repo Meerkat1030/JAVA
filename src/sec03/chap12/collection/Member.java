@@ -1,5 +1,7 @@
 package sec03.chap12.collection;
 
+import javax.crypto.spec.PSource;
+
 public class Member implements Comparable<Member>{
     private int memberId;
     private String memberName;
@@ -41,6 +43,9 @@ public class Member implements Comparable<Member>{
             }
         }
         return false;
+
+
+
     }
     @Override
     public String toString(){
@@ -53,4 +58,5 @@ public class Member implements Comparable<Member>{
         return (this.memberId - member.memberId);
         // *-1을 해주면 내림차순 정렬
     }
+
 }
