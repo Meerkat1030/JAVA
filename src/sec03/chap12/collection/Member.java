@@ -1,6 +1,6 @@
 package sec03.chap12.collection;
 
-public class Member {
+public class Member implements Comparable<Member>{
     private int memberId;
     private String memberName;
 
@@ -45,5 +45,12 @@ public class Member {
     @Override
     public String toString(){
         return memberName + "회원님의 아이디는 " + memberId + "입니다.";
+    }
+
+    //추가한 회원 아이디와 매개변수로 받은 회원아이디를 비교
+    @Override
+    public int compareTo(Member member) {
+        return (this.memberId - member.memberId);
+        // *-1을 해주면 내림차순 정렬
     }
 }
