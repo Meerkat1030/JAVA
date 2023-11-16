@@ -25,6 +25,24 @@ public class Member {
         this.memberName = memberName;
     }
     @Override
+    public int hashCode(){
+        return memberId;
+    }
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof Member){
+            Member member = (Member) obj;
+            //매개변수로 받은 회원 ID가 자신의 회원 ID와 같으면
+            //true 반환
+            if(this.memberId == member.memberId){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        return false;
+    }
+    @Override
     public String toString(){
         return memberName + "회원님의 아이디는 " + memberId + "입니다.";
     }
