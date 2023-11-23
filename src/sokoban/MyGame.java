@@ -52,26 +52,52 @@ class MySokoban extends JFrame implements KeyListener, ActionListener{
 
     String [][] Stage = {
             //stage1
-            {"  ####",
-             "  #  ###",
-             "  #    #",
-             "  # $  #",
-             "### ###",
-             "# $ $ #",
-             "#..@..#",
-             "#  $  #",
-             "###  ##",
-             "####",
+            {       "  ####        ",
+                    "  #  ###      ",
+                    "  #    #      ",
+                    "  # $  #      ",
+                    "### ###       ",
+                    "# $ $ #       ",
+                    "#..@..#       ",
+                    "#  $  #       ",
+                    "###  ##       ",
+                    "####          ",
             },
             //stage2
-            {"#####",
-             "#  @####",
-             "#  $.  #",
-             "###$.# #",
-             "#  $.# #",
-             "# #$.  #",
-             "#    ###",
-             "######",
+            {       "##############",
+                    "#  @$.       #",
+                    "#   $ ###    #",
+                    "#   . ###    #",
+                    "#            #",
+                    "#   ####  #  #",
+                    "#   ####  #  #",
+                    "#   #     #  #",
+                    "#            #",
+                    "##############"
+            },
+            //stage3
+            {        "  #####       ",
+                     " #   #        ",
+                     " #### # #     ",
+                     " # . .# #     ",
+                     " #  .   #     ",
+                     "# .## $##     ",
+                     "##  #$$ #     ",
+                     " ##   $@#     ",
+                     " ##  ###      ",
+                     "####          ",
+            },
+            //stage4
+            {"@             ",
+                    " ############ ",
+                    " #          # ",
+                    " #          # ",
+                    " #   $      # ",
+                    " #    .     # ",
+                    " #          # ",
+                    " #          # ",
+                    " ######### ## ",
+                    "              ",
             },
 
     };
@@ -178,7 +204,7 @@ class MySokoban extends JFrame implements KeyListener, ActionListener{
                             aImage = this.Road;
                             break;
                     }
-                    g.drawImage(aImage, iX*IXSize*LThick, iY*IYSize*MYUpsize, this);
+                    g.drawImage(aImage, iX*IXSize+LThick, iY*IYSize+MYUpsize, this);
                 }
                 System.out.println(Map[iY]); // 디버깅 코드
             }
@@ -228,8 +254,31 @@ class MySokoban extends JFrame implements KeyListener, ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        JButton temp = (JButton) e.getSource();
+        int iX = iXMan; // iX 새 좌표값, iXMan은 기존 좌표값
+        int iY = iYMan; // iY 새 좌표값, iYMan은 기존 좌표값
 
+        if(temp.equals(btnReset)){
+            LoadMap();
+            repaint();
+            return;
+        }else if(temp.equals(btnUP)){
+            Man = ManB;
+            --iY;
+        }else if(temp.equals(btnDOWN)){
+            Man = ManF;
+            ++iY;
+        }else if(temp.equals(btnLEFT)){
+            Man = ManL;
+            --iX;
+        }else if(temp.equals(btnRIGHT)) {
+            Man = ManR;
+            ++iX;
+        }
+        ManMove(iX, iY);
+        repaint();
     }
+
 
     @Override
     public void keyPressed(KeyEvent e) {
